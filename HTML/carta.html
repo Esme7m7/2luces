@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #ffe4e1;
+      flex-direction: column;
+      overflow: hidden; /* Evita el scroll */
+    }
+
+    .image {
+      width: 400px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: crimson;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .heart {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: crimson;
+      clip-path: polygon(50% 0%, 61% 19%, 81% 19%, 100% 40%, 100% 64%, 50% 100%, 0 64%, 0 40%, 19% 19%, 39% 19%);
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <h1>Feliz dos años ¡Te amo!</h1>
+  <h2> Has sido muy bueno conmigo, eres muy lindo, has sido una gran persona y me encanta estar 
+    contigo, me gusta <br> recordar las cosas que he hecho contigo, cuando hemos ido al cine, a
+    los cerritos, el paseo por las plazas y demás <br> cosas que he hecho a tu lado y me siento muy feliz 
+    de haber compartido tantos momentos contigo, yo no he sido <br> la mejor, pero quiero mejorar tanto por
+     mí como por ti, por que quiero hacerte feliz, quiero que sepas que eres <br>demasiado importante 
+     para mi y que mi historia de amor favorita es la nuestra :3<br>
+     He sido muy feliz estanto contigo todo este tiempo, y espero que a pesar de todo, podamos
+    mucho tiempo más. 
+    </h2>
+
+  <script>
+    function crearCorazon() {
+      const corazon = document.createElement('div');
+      corazon.classList.add('heart');
+      corazon.style.left = Math.random() * 100 + 'vw';
+      corazon.style.animationDuration = Math.random() * 3 + 2 + 's'; // Duración aleatoria entre 2-5s
+      document.body.appendChild(corazon);
+
+      // Elimina los corazones después de que desaparezcan
+      setTimeout(() => {
+        corazon.remove();
+      }, 5000);
+    }
+
+    // Genera un corazón cada 300ms
+    setInterval(crearCorazon, 300);
+  </script>
+</body>
+</html>

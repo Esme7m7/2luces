@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Principal</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #ffe4e1;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .image {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .button {
+      padding: 15px 30px;
+      font-size: 18px;
+      color: white;
+      background-color: transparent;
+      border: 2px solid red;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: box-shadow 0.3s, background-color 0.3s;
+    }
+
+    .button:hover {
+      box-shadow: 0 0 15px red;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="niña con carta.jpeg" alt="Imagen 1" class="image">
+    <button class="button" onclick="abrirCarta()">Abrir Carta</button>
+  </div>
+
+  <script>
+    function abrirCarta() {
+      window.location.href = 'carta.html';
+    }
+  </script>
+</body>
+</html>
